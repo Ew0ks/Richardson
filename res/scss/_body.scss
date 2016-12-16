@@ -10,6 +10,36 @@ body {
   margin: 0 5%;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:active, a:focus, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 100;
+  margin-bottom: 16px;
+}
+
+p.intro {
+  font-size: 20px;
+}
+
 .flex {
   @include flexbox;
   @include flex-just(space-between);
@@ -17,6 +47,12 @@ body {
   @media (max-width: 787px) {
     display: block;
   }
+}
+
+.row-header,
+.content-nav {
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .row-header {
@@ -49,8 +85,6 @@ body {
         & a {
           color: #545454;
           height: 100%;
-          text-transform: uppercase;
-          font-weight: 300;
           display: block;
           padding-top: 25px;
           &:hover,
@@ -65,7 +99,7 @@ body {
   & .col-md-4 {
     height: 112px;
     & .myButton {
-    background-color: #edba18;
+      background-color: #edba18;
     }
   }
 }
@@ -89,4 +123,82 @@ body {
 
 .row-header .menu-top li:nth-of-type(4) a:before {
   background-image: url("img/picto-rdv.png");
+}
+
+.content-nav .flex {
+  background-color: $color3;
+  color: $color2;
+  padding: 0;
+  height: 64px;
+  & ul {
+    list-style: none;
+    width: 66.67%;
+    height: 100%;
+    @include flexbox;
+    & li {
+      height: 100%;
+      width: 25%;
+      text-align: center;
+    }
+  }
+  & .side-pro {
+    height: 100%;
+    width: 33.33%;
+    background-color: $color4;
+    padding: 21px 0 0 4%;
+    box-shadow: inset 0px 0px 0px 100px rgba(10, 45, 57, 0);
+    &:hover {
+      box-shadow: inset 0px 0px 0px 100px rgba(10, 45, 57, .8);
+    }
+  }
+  & a {
+    display: block;
+    height: 100%;
+    padding-top: 21px;
+    box-shadow: inset 0px 0px 0px 100px rgba(84, 84, 84, 0);
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    &:hover {
+      box-shadow: inset 0px 0px 0px 100px rgba(84, 84, 84, .2);
+    }
+  }
+}
+
+section.deco {
+  margin-top: 16px;
+}
+
+.slider-main {
+  padding: 0;
+  & .carousel-inner {
+    & .item {
+      & img {
+        min-width: 100%;
+      }
+      & > div {
+        margin: -300px 0 0 10%;
+        position: absolute;
+        width: 80%;
+        color: $color2;
+        background-color: $color3;
+        padding: 16px 50px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.carousel {
+  & .carousel-control {
+    width: 5%;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    & i {
+      position: absolute;
+      top: 50%;
+    }
+  }
+
 }

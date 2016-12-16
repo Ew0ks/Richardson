@@ -12,6 +12,8 @@ gulp.task('script', function () {
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/button.js",
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js",
+            "node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js",
+            "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
             "res/assets/script/**/*.js"
         ])
         .pipe(uglify())
@@ -34,6 +36,7 @@ gulp.task('style', function () {
         .pipe(sass({
             "includePaths" : [
                 "node_modules/bootstrap-sass/assets/stylesheets",
+                "node_modules/font-awesome/scss",
                 "node_modules/sass-flex-mixin"
             ]
         }))
