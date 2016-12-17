@@ -1,3 +1,7 @@
+html {
+  font-size: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +12,9 @@ body {
   color: $color1;
   font-size: 16px;
   margin: 0 5%;
+  @media (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 
 ul {
@@ -206,6 +213,7 @@ section.deco {
 }
 
 .encart {
+  @extend .myButton;
   display: block;
   bottom: 10%;
   left: 10%;
@@ -242,5 +250,117 @@ section.deco {
   }
   & img {
     width: 100%;
+  }
+}
+
+.row.content-a,
+.row.content-c {
+  margin-top: 1em;
+  & .col-md-12 {
+    padding: 0;
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.row.content-b,
+.row.content-d {
+  margin-top: 1em;
+  & .col-md-12 {
+    padding: 0;
+    & .circle {
+      position: absolute;
+      z-index: 999;
+      width: 25em;
+      top: -12.5em;
+      left: 23%;
+      & .circle-content {
+        height: 0;
+        padding: 50% 0;
+        text-align: center;
+        line-height: normal;
+        color: $color2;
+        box-shadow: 0px 0px 0px 1em $color2;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        background-color: $color3;
+        border-radius: 50%;
+        transition: 0.3s ease all;
+        -moz-transition: 0.3s ease all;
+        -webkit-transition: 0.3s ease all;
+        &:hover {
+          background-color: $color4;
+        }
+        & .carousel-indicators {
+          position: relative;
+          width: auto;
+          margin: 1em 0;
+          left: 0;
+          bottom: 0;
+        }
+        & .circle-title {
+          font-weight: 100;
+          font-size: 3.5em;
+          letter-spacing: -4px;
+        }
+        & .circle-text {
+          font-size: 1.5em;
+          font-weight: 100;
+        }
+      }
+    }
+    & .carousel-inner {
+      & .item {
+        & .flex {
+          @include flex-wrap(no-wrap);
+          & > div {
+            width: 33%;
+            margin-right: 1em;
+            position: relative;
+            &:last-of-type {
+              margin-right: 0;
+            }
+            & img {
+              width: 100%;
+              height: auto;
+            }
+            & a {
+              @extend .myButton;
+              margin: 0;
+              font-weight: 300;
+              font-size: 1.5em;
+              position: absolute;
+              display: block;
+              background: rgba($color2, .8);
+              right: 0;
+              bottom: 1em;
+              padding: 1em;
+              & i {
+                transition: 0.3s ease all;
+                -moz-transition: 0.3s ease all;
+                -webkit-transition: 0.3s ease all;
+                margin: 6px 0 0 16px;
+              }
+              &:hover {
+                & i {
+                  transform: translateX(10px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.row.content-d {
+  & .circle {
+    right: 23%;
+    left:auto!important;
   }
 }
