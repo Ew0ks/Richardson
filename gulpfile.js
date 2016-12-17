@@ -14,6 +14,7 @@ gulp.task('script', function () {
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js",
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js",
             "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
+            "node_modules/scrollreveal/src/scrollreveal.js",
             "res/assets/script/**/*.js"
         ])
         .pipe(uglify())
