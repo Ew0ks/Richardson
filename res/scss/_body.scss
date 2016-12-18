@@ -1,3 +1,5 @@
+// ------------- GENERAL CSS
+
 html {
   font-size: 100%;
 }
@@ -69,6 +71,8 @@ p.intro {
     }
   }
 }
+
+// ------------- HEADER
 
 .row-header,
 .content-nav {
@@ -186,6 +190,8 @@ p.intro {
   }
 }
 
+// ------------- DECO
+
 section.deco {
   margin-top: 1em;
   & > .col-md-4 {
@@ -194,6 +200,19 @@ section.deco {
 }
 
 .carousel {
+  .carousel-indicators li {
+    width: 1em;
+    height: 1em;
+    border: none;
+    margin:0 .25em;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+    background-color:rgba($color2, .5);
+  }
+  .carousel-indicators .active {
+    background-color:rgba($color2, 1);
+  }
   .carousel-control {
     width: 5%;
     transition: 0.3s ease all;
@@ -275,6 +294,8 @@ section.deco {
     width: 100%;
   }
 }
+
+// ------------- ROWS
 
 .row.content-a,
 .row.content-c {
@@ -368,7 +389,7 @@ section.deco {
               font-size: 1.5em;
               position: absolute;
               display: block;
-              background: rgba($color2, .8);
+              background-color:$color2;
               right: 0;
               bottom: 1em;
               padding: 1em;
@@ -441,6 +462,7 @@ section.deco {
         width: 33%;
         margin-right: 1em;
         position: relative;
+        overflow: hidden;
         &:last-of-type {
           margin-right: 0;
         }
@@ -455,7 +477,7 @@ section.deco {
           font-size: 1.5em;
           position: absolute;
           display: block;
-          background: rgba($color2, .8);
+          background-color: $color2;
           right: 0;
           bottom: 1em;
           padding: 1em;
@@ -475,6 +497,8 @@ section.deco {
     }
   }
 }
+
+// ------------- FOOTER
 
 .row.footer {
   margin-top: 1em;
