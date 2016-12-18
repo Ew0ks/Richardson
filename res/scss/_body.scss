@@ -353,6 +353,7 @@ section.deco {
             width: 33%;
             margin-right: 1em;
             position: relative;
+            overflow: hidden;
             &:last-of-type {
               margin-right: 0;
             }
