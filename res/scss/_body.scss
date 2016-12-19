@@ -39,15 +39,21 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 3vw;
   font-weight: 300;
   margin-bottom: 16px;
+  @media (max-width: 991px) { //Random breakpoint
+    font-size: 3.5em;
+  }
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2vw;
   font-weight: 100;
   margin-bottom: 16px;
+  @media (max-width: 991px) { //Random breakpoint
+    font-size: 2em;
+  }
 }
 
 h3 {
@@ -63,11 +69,16 @@ p.intro {
   @include flexbox;
   @include flex-just(space-between);
   @include align-items(center);
-  @media (max-width: 788px) { //Random breakpoint
+  @media (max-width: 991px) { //Random breakpoint
     display: block;
     & > * {
       width: 100% !important;
       margin: 0 !important;
+    }
+    & > img {
+      width: auto!important;
+      display: block;
+      margin: 0 auto!important;
     }
   }
 }
@@ -82,7 +93,7 @@ p.intro {
 
 .row-header {
   .col-md-8 {
-    height: 7em;
+    height: auto;
     .menu-top {
       list-style: none;
       height: 100%;
@@ -93,19 +104,20 @@ p.intro {
       li {
         height: 100%;
         box-shadow: inset 0px 8px 0px 0px rgba(84, 84, 84, .2);
-        transition: 0.2s ease all;
-        -moz-transition: 0.2s ease all;
-        -webkit-transition: 0.2s ease all;
+        transition: 0.3s ease all;
+        -moz-transition: 0.3s ease all;
+        -webkit-transition: 0.3s ease all;
         width: 25%;
         text-align: center;
         margin-right: 1px;
+        padding-bottom:2em;
         &:last-of-type {
           margin-right: 0
         }
         &:hover,
         &:focus,
         &:active {
-          box-shadow: inset 0px 112px 0px 0px #ddd;
+          box-shadow: inset 0px 175px 0px 0px #ddd;
         }
         a {
           color: #545454;
@@ -122,7 +134,7 @@ p.intro {
     }
   }
   .col-md-4 {
-    height: 7em;
+    height: auto;
     .myButton {
       background-color: #edba18;
     }
@@ -154,7 +166,7 @@ p.intro {
   background-color: $color3;
   color: $color2;
   padding: 0;
-  height: 4em;
+  height: auto;
   ul {
     list-style: none;
     width: 67%;
@@ -170,8 +182,13 @@ p.intro {
     height: 100%;
     width: 33%;
     background-color: $color4;
-    padding: 21px 0 0 4%;
+    position: absolute;
+    padding-left: 4%;
+    right:0;
     box-shadow: inset 0px 0px 0px 100px rgba(10, 45, 57, 0);
+    @media (max-width: 991px) { //Random breakpoint
+      position: relative;
+    }
     &:hover {
       box-shadow: inset 0px 0px 0px 100px rgba(10, 45, 57, .8);
     }
@@ -179,7 +196,7 @@ p.intro {
   a {
     display: block;
     height: 100%;
-    padding-top: 1.313em;
+    padding: 1.313em 0;
     box-shadow: inset 0px 0px 0px 100px rgba(84, 84, 84, 0);
     transition: 0.3s ease all;
     -moz-transition: 0.3s ease all;
@@ -506,7 +523,7 @@ section.deco {
   font-weight: 300;
   background-color: lighten($color1, 3%);
   @include flexbox;
-  @media (max-width: 788px) { //Random breakpoint
+  @media (max-width: 991px) { //Random breakpoint
     display: block;
   }
   & > * {
@@ -579,7 +596,14 @@ section.deco {
     position: absolute;
     bottom: 2em;
     display: block;
-    width: 100%;
     font-size: 14px;
+  }
+  a {
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+  a:hover {
+    color:rgba($color2, 0.5);
   }
 }
